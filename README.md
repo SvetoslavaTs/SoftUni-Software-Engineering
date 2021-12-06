@@ -1,5 +1,5 @@
 # SoftUni-Software-Engineering
 Courses from the main program in Software University
 
-![image](https://softuni.bg/curriculum)
+(https://softuni.bg/curriculum)
 
