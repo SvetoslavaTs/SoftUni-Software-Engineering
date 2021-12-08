@@ -35,7 +35,7 @@ public class softUniCoursePlanning {
                 case "Remove": {
                     String lessonTitle = tokens[1];
                     int indexOfLessonTitle = list.indexOf(lessonTitle);
-                    if (indexOfLessonTitle >= 0 && indexOfLessonTitle <= list.size() - 1) {
+                    if (indexIsValid(indexOfLessonTitle, list.size())) {
                         if (list.contains(lessonTitle)) {
                             list.remove(list.indexOf(lessonTitle));
                         }
@@ -54,20 +54,10 @@ public class softUniCoursePlanning {
                         list.set(indexOfLessonTitle, lessonTitle1);
                         list.set(indexOfLessonTitle1, lessonTitle);
                     }
-                    if (indexOfLessonTitle + 1 < list.size() && indexOfLessonTitle1 + 1 < list.size()) {
-                        String lesson1Exercise = list.get(indexOfLessonTitle + 1);
-                        if (!lesson1Exercise.contains("Exercise")) {
-                            list.add(indexOfLessonTitle1 + 1, lesson1Exercise);
-                            if (indexOfLessonTitle < indexOfLessonTitle1) {
-                                list.remove(indexOfLessonTitle + 1);
-                            } else if (indexOfLessonTitle > indexOfLessonTitle1) {
-                                list.remove(indexOfLessonTitle1 + 2);
-                            }
-                        }
-                    }
+
                     if (indexOfLessonTitle + 1 < list.size() && indexOfLessonTitle1 + 1 < list.size()) {
                         String lessonExercise = list.get(indexOfLessonTitle1 + 1);
-                        if (!lessonExercise.contains("Exercise")) {
+                        if (lessonExercise.contains("Exercise")) {
                             list.add(indexOfLessonTitle + 1, lessonExercise);
                             if (indexOfLessonTitle > indexOfLessonTitle1) {
                                 list.remove(indexOfLessonTitle + 1);
@@ -102,5 +92,9 @@ public class softUniCoursePlanning {
         for (int i = 0; i < list.size(); i++) {
             System.out.printf("%d.%s%n", i + 1, list.get(i));
         }
+    }
+
+    public static boolean indexIsValid(int index, int listLength) {
+        return index >= 0 && index <= listLength - 1;
     }
 }
