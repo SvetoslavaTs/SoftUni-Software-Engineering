@@ -1,0 +1,41 @@
+body{
+    background: blueviolet;
+}
+
+h1{
+    font-size: 25px;
+    color: chartreuse;
+    font-family: "Arial Rounded MT Bold", serif;
+}
+
+#heading2{
+    font-size: 25px;
+    color: chartreuse;
+    font-family: "Arial Rounded MT Bold", serif;
+}
+
+.colour{
+    color: darkorange;
+    shape-outside: border-box;
+    letter-spacing: 2px;
+}
+
+button {
+    color: coral;
+    text-transform: uppercase;
+    background: blanchedalmond;
+    border: none;
+    padding: 5px;
+    border-radius: 810px;
+}
+
+button:hover {
+   background: crimson;
+    color: black;
+    cursor: pointer;
+}
+body{
+    background: url("pepa.jpg");
+    background-size: cover;
+    height: 600px;
+}
