@@ -1,0 +1,57 @@
+package ExercisesDefiningClasses.SpeedRacing;
+
+public class Car {
+    private String model;
+    private double fuelAmount;
+    private double fuelCostFor1Kilometer;
+    private double distanceTraveled;
+
+    public Car(String model, double fuelAmount, double fuelCostFor1Kilometer) {
+        this.model = model;
+        this.fuelAmount = fuelAmount;
+        this.fuelCostFor1Kilometer = fuelCostFor1Kilometer;
+        this.distanceTraveled = 0;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public double getFuelAmount() {
+        return fuelAmount;
+    }
+
+    public double getFuelCostFor1Kilometer() {
+        return fuelCostFor1Kilometer;
+    }
+
+    public double getDistanceTraveled() {
+        return distanceTraveled;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setFuelAmount(double fuelAmount) {
+        this.fuelAmount = fuelAmount;
+    }
+
+    public void setFuelCostFor1Kilometer(double fuelCostFor1Kilometer) {
+        this.fuelCostFor1Kilometer = fuelCostFor1Kilometer;
+    }
+
+    public void setDistanceTraveled(double distanceTraveled) {
+        this.distanceTraveled = distanceTraveled;
+    }
+
+    public void DriveTheDistanceOrNot(double amountOfKm) {
+        double neededFuel = amountOfKm * this.fuelCostFor1Kilometer;
+        if (this.fuelAmount >= neededFuel) {
+            this.fuelAmount -= neededFuel;
+            this.distanceTraveled += amountOfKm;
+        } else {
+            System.out.println("Insufficient fuel for the drive");
+        }
+    }
+}
